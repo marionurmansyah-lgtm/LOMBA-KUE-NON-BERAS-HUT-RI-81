@@ -1,0 +1,1265 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260807-05-4dc3575","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFLd8sKbwc,2","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Libre Baskerville":"YACgEUFdPdA,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YADLjI9qxTA,0","Nunito":"YACgEX8C5Gg,0","Oleo Script":"YACgEQQ14jI,0","Phantom Sans":"YAHO2E8Pb88,0","Playfair Display":"YACgEYmuCJE,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YADWjpfPmdk,0","Raleway":"YACgEVg3xZg,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Ubuntu":"YACgERDU--Q,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YADlN8CFZ8Q,0","ui-sans-serif":"YACkoN-xg4g,0"}}');</script>
+  <script src="/_sdk/7949ff62d67710d5.telemetry_sdk.js" integrity="sha512-KIvXA82Di44YY/RH9/63A9MuTuavYgDFG8PfErJn7Wli4K0LAOk+coo/aPXk3+ZNL96nHh9VYD4PE+fLes+laQ=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lomba Kue Non-Beras</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&amp;family=Archivo+Black&amp;display=swap" rel="stylesheet">
+  <style>
+        :root {
+            --bg: #FFF8EE;
+            --ink: #111111;
+            --pink: #FF006E;
+            --yellow: #FFBE0B;
+            --green: #06FFA5;
+            --blue: #3A86FF;
+            --purple: #8338EC;
+            --orange: #FB5607;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Brutalist background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--ink) 1px, transparent 1px),
+                linear-gradient(90deg, var(--ink) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .display-font { font-family: 'Archivo Black', sans-serif; letter-spacing: -0.02em; }
+        .serif-font { font-family: 'Fraunces', serif; }
+
+        /* Container */
+        .wrap {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 24px 16px 48px;
+        }
+
+        /* BRUTALIST CARD - the hero element */
+        .brutal-card {
+            background: white;
+            border: 3px solid var(--ink);
+            border-radius: 20px;
+            box-shadow: 8px 8px 0 var(--ink);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .brutal-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 10px 10px 0 var(--ink);
+        }
+        .brutal-card-sm {
+            background: white;
+            border: 2.5px solid var(--ink);
+            border-radius: 14px;
+            box-shadow: 4px 4px 0 var(--ink);
+        }
+
+        /* Colored brutal cards */
+        .brutal-pink { background: var(--pink); color: white; }
+        .brutal-yellow { background: var(--yellow); }
+        .brutal-green { background: var(--green); }
+        .brutal-blue { background: var(--blue); color: white; }
+        .brutal-purple { background: var(--purple); color: white; }
+        .brutal-orange { background: var(--orange); color: white; }
+
+        /* Header */
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .brand-pill {
+            background: var(--ink);
+            color: var(--yellow);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border: 2px solid var(--ink);
+        }
+
+        .date-sticker {
+            background: var(--pink);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            border: 2.5px solid var(--ink);
+            box-shadow: 3px 3px 0 var(--ink);
+            transform: rotate(-2deg);
+        }
+
+        /* Main title */
+        .title-block {
+            margin-bottom: 32px;
+            position: relative;
+        }
+        .title-kicker {
+            display: inline-block;
+            background: var(--yellow);
+            border: 2px solid var(--ink);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 14px;
+            box-shadow: 3px 3px 0 var(--ink);
+        }
+        .title-main {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(40px, 10vw, 72px);
+            line-height: 0.9;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+        }
+        .title-main .line-1 {
+            display: block;
+            color: var(--ink);
+        }
+        .title-main .line-2 {
+            display: block;
+            background: var(--pink);
+            color: white;
+            padding: 4px 14px;
+            border: 3px solid var(--ink);
+            border-radius: 10px;
+            box-shadow: 6px 6px 0 var(--ink);
+            transform: rotate(-1.5deg);
+            margin-top: 10px;
+        }
+        .title-sub {
+            margin-top: 18px;
+            font-size: 15px;
+            color: #555;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        /* Engage bar - sticker style */
+        .engage-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+        .engage-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: white;
+            border: 2px solid var(--ink);
+            border-radius: 50px;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow: 3px 3px 0 var(--ink);
+        }
+        .engage-tag .n {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 13px;
+        }
+
+        /* Content stage */
+        .stage {
+            margin-top: 28px;
+        }
+
+        /* Topic header */
+        .topic-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .topic-num {
+            background: var(--ink);
+            color: var(--yellow);
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 18px;
+            padding: 8px 14px;
+            border-radius: 10px;
+            letter-spacing: 0.05em;
+        }
+        .topic-label {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-size: 17px;
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* Topic icon block */
+        .icon-block {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            border: 3px solid var(--ink);
+            box-shadow: 5px 5px 0 var(--ink);
+            margin-bottom: 20px;
+        }
+
+        /* Topic title */
+        .topic-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(26px, 6vw, 36px);
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+        .topic-title .accent {
+            background: var(--yellow);
+            padding: 2px 10px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+        .topic-title .accent-pink {
+            background: var(--pink);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .topic-desc {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        .topic-desc strong { color: var(--ink); font-weight: 700; }
+
+        /* List items brutal style */
+        .brutal-list {
+            list-style: none;
+        }
+        .brutal-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 12px 14px;
+            background: var(--bg);
+            border: 2px solid var(--ink);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ink);
+            box-shadow: 3px 3px 0 var(--ink);
+            animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+        }
+        .brutal-list li:nth-child(1) { animation-delay: 0.05s; }
+        .brutal-list li:nth-child(2) { animation-delay: 0.12s; }
+        .brutal-list li:nth-child(3) { animation-delay: 0.19s; }
+        .brutal-list li:nth-child(4) { animation-delay: 0.26s; }
+
+        .bullet {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--ink);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 13px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .bullet.pink { background: var(--pink); }
+        .bullet.green { background: #059669; color: white; }
+        .bullet.red { background: #DC2626; color: white; }
+        .bullet.blue { background: var(--blue); color: white; }
+        .bullet.yellow { background: var(--yellow); color: var(--ink); }
+
+        /* Chips */
+        .chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 16px 0;
+        }
+        .chip {
+            background: white;
+            border: 2px solid var(--ink);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 3px 3px 0 var(--ink);
+            transition: transform 0.15s;
+            cursor: default;
+        }
+        .chip:hover {
+            transform: translate(-2px, -2px) rotate(-1deg);
+            box-shadow: 5px 5px 0 var(--ink);
+        }
+        .chip.pink { background: var(--pink); color: white; }
+        .chip.yellow { background: var(--yellow); }
+        .chip.green { background: var(--green); }
+        .chip.blue { background: var(--blue); color: white; }
+
+        /* Stat callout */
+        .stat-big {
+            text-align: center;
+            padding: 32px 20px;
+            background: var(--yellow);
+            border: 3px solid var(--ink);
+            border-radius: 18px;
+            box-shadow: 6px 6px 0 var(--ink);
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-big::before {
+            content: '💰';
+            position: absolute;
+            font-size: 140px;
+            opacity: 0.1;
+            right: -20px;
+            top: -30px;
+            transform: rotate(15deg);
+        }
+        .stat-big .label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--ink);
+            margin-bottom: 8px;
+        }
+        .stat-big .value {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(42px, 11vw, 64px);
+            line-height: 1;
+            letter-spacing: -0.03em;
+            color: var(--ink);
+            position: relative;
+        }
+        .stat-big .sub {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* Info blocks */
+        .info-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        @media (max-width: 500px) {
+            .info-row { grid-template-columns: 1fr; }
+        }
+        .info-tile {
+            padding: 16px;
+            border: 2.5px solid var(--ink);
+            border-radius: 12px;
+            box-shadow: 4px 4px 0 var(--ink);
+        }
+        .info-tile .emoji {
+            font-size: 26px;
+            margin-bottom: 6px;
+        }
+        .info-tile .lbl {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #666;
+            margin-bottom: 4px;
+        }
+        .info-tile .val {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 17px;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+        .info-tile.tile-pink { background: #FFE4EF; }
+        .info-tile.tile-yellow { background: #FFF5CC; }
+        .info-tile.tile-green { background: #D1FAE5; }
+        .info-tile.tile-blue { background: #DBEAFE; }
+
+        /* Score bars brutal */
+        .score-row {
+            margin-bottom: 14px;
+        }
+        .score-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        .score-name {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--ink);
+        }
+        .score-pct {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 16px;
+            background: var(--ink);
+            color: var(--yellow);
+            padding: 2px 10px;
+            border-radius: 6px;
+        }
+        .score-track {
+            height: 24px;
+            background: white;
+            border: 2.5px solid var(--ink);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 2px 2px 0 var(--ink);
+        }
+        .score-fill {
+            height: 100%;
+            width: 0%;
+            border-right: 2.5px solid var(--ink);
+            transition: width 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 6px;
+        }
+        .score-fill.pink { background: var(--pink); }
+        .score-fill.yellow { background: var(--yellow); }
+        .score-fill.green { background: var(--green); }
+        .score-fill.blue { background: var(--blue); }
+        .score-fill.purple { background: var(--purple); }
+
+        /* Warning box */
+        .warning-box {
+            background: #FEE2E2;
+            border: 3px solid #DC2626;
+            border-radius: 14px;
+            padding: 16px;
+            margin-top: 16px;
+            position: relative;
+            box-shadow: 4px 4px 0 #DC2626;
+        }
+        .warning-box::before {
+            content: '⚠️';
+            position: absolute;
+            top: -14px;
+            left: 14px;
+            background: white;
+            border: 2.5px solid #DC2626;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        /* Trophy grid */
+        .trophy-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .trophy-item {
+            background: white;
+            border: 2.5px solid var(--ink);
+            border-radius: 12px;
+            padding: 18px 8px;
+            text-align: center;
+            box-shadow: 4px 4px 0 var(--ink);
+            transition: transform 0.2s;
+        }
+        .trophy-item:hover {
+            transform: translateY(-3px) rotate(-1deg);
+        }
+        .trophy-item.gold {
+            background: var(--yellow);
+            grid-row: span 1;
+            padding-top: 22px;
+            padding-bottom: 22px;
+        }
+        .trophy-item.silver { background: #E5E7EB; }
+        .trophy-item.bronze { background: #FED7AA; }
+        .trophy-item .emoji {
+            font-size: 38px;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .trophy-item.gold .emoji { font-size: 52px; }
+        .trophy-item .rank {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Hashtag row */
+        .hash-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        .hash {
+            background: var(--ink);
+            color: var(--yellow);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: 'Space Grotesk', monospace;
+        }
+
+        /* CTA button */
+        .cta-btn {
+            background: var(--pink);
+            color: white;
+            border: 3px solid var(--ink);
+            padding: 16px 34px;
+            border-radius: 50px;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 16px;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 6px 6px 0 var(--ink);
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .cta-btn:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 9px 9px 0 var(--ink);
+        }
+        .cta-btn:active {
+            transform: translate(3px, 3px);
+            box-shadow: 0 0 0 var(--ink);
+        }
+        .cta-btn.green { background: var(--green); color: var(--ink); }
+        .cta-btn.yellow { background: var(--yellow); color: var(--ink); }
+        .cta-btn.blue { background: var(--blue); color: white; }
+
+        /* Start hero */
+        .start-hero {
+            padding: 40px 28px;
+            text-align: center;
+        }
+        .hero-emoji-wrap {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .hero-emoji {
+            font-size: 80px;
+            display: block;
+            animation: wiggle 2s ease-in-out infinite;
+        }
+        .hero-emoji-wrap::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: var(--yellow);
+            border: 3px solid var(--ink);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            box-shadow: 5px 5px 0 var(--ink);
+        }
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+        .start-hero h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(30px, 8vw, 44px);
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin-bottom: 14px;
+            line-height: 0.95;
+        }
+        .start-hero p {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 26px;
+            max-width: 380px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        /* Controls */
+        .ctrl-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 10px;
+            background: white;
+            border: 3px solid var(--ink);
+            border-radius: 50px;
+            box-shadow: 5px 5px 0 var(--ink);
+        }
+        .ctrl-btn {
+            background: var(--bg);
+            border: 2px solid var(--ink);
+            border-radius: 50px;
+            padding: 8px 18px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .ctrl-btn:hover:not(:disabled) {
+            background: var(--yellow);
+        }
+        .ctrl-btn:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+        }
+        .ctrl-btn.next {
+            background: var(--ink);
+            color: var(--yellow);
+        }
+        .ctrl-btn.next:hover:not(:disabled) {
+            background: var(--pink);
+            color: white;
+        }
+
+        /* Dots */
+        .dot-row {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #D6D3D1;
+            border: 1.5px solid var(--ink);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .dot.active {
+            background: var(--pink);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        /* Page indicator */
+        .page-ind {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            margin-top: 14px;
+            font-weight: 600;
+        }
+        .page-ind strong {
+            background: var(--ink);
+            color: var(--yellow);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Archivo Black', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        /* Footer */
+        .foot {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 2px dashed var(--ink);
+        }
+        .foot p {
+            font-size: 13px;
+            color: #666;
+            font-weight: 500;
+        }
+        .foot .big {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 14px;
+            color: var(--ink);
+            margin-top: 6px;
+            letter-spacing: 0.02em;
+        }
+
+        /* Topic view animation */
+        .topic-view {
+            animation: slidePop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        @keyframes slidePop {
+            from { opacity: 0; transform: translateY(20px) scale(0.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes popIn {
+            from { opacity: 0; transform: translateX(-12px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            font-size: 28px;
+            z-index: 1000;
+            pointer-events: none;
+            animation: confDrop 3s linear forwards;
+        }
+        @keyframes confDrop {
+            0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(1080deg); opacity: 0; }
+        }
+
+        /* Final screen */
+        .final {
+            text-align: center;
+            padding: 36px 24px;
+        }
+        .final h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(32px, 9vw, 52px);
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+        .final h2 .w1 { color: var(--ink); display: block; }
+        .final h2 .w2 {
+            background: var(--pink);
+            color: white;
+            padding: 2px 14px;
+            border: 3px solid var(--ink);
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 5px 5px 0 var(--ink);
+            transform: rotate(-2deg);
+            margin-top: 8px;
+        }
+        .final p {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .final-emoji {
+            font-size: 72px;
+            display: block;
+            margin-bottom: 16px;
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Floating stickers on start */
+        .sticker {
+            position: absolute;
+            background: white;
+            border: 2.5px solid var(--ink);
+            border-radius: 10px;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 700;
+            box-shadow: 4px 4px 0 var(--ink);
+            font-family: 'Archivo Black', sans-serif;
+        }
+        .sticker.s1 {
+            top: 20px;
+            right: 20px;
+            background: var(--green);
+            transform: rotate(8deg);
+        }
+        .sticker.s2 {
+            bottom: 20px;
+            left: 20px;
+            background: var(--blue);
+            color: white;
+            transform: rotate(-6deg);
+        }
+
+        /* Hidden */
+        .hidden { display: none !important; }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+            .wrap { padding: 16px 12px 32px; }
+            .brutal-card { box-shadow: 6px 6px 0 var(--ink); }
+            .icon-block { width: 68px; height: 68px; font-size: 36px; }
+            .ctrl-btn { padding: 7px 12px; font-size: 12px; }
+        }
+    </style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/0e8d3a91e1c6f495.data_sdk.js" type="text/javascript" integrity="sha512-c00oDoGjsMgluCLLEyVl3suwEkgjOGGplVFbsilUoBg4aMKNmsL3mwsc9r0dPn95qiSZyjBousQXgROkAW7p/w=="></script>
+  <script src="/_sdk/04cc6185e046f597.resizing_sdk.js" type="text/javascript" integrity="sha512-CiE/G92aQF0nxneFg1kdOvXih8sQ1Z2a2QI3+r/WvzJwQqH6+IyB3iL07OkJmpm3ABAaf07+FnqWny98f5sR6w=="></script>
+ </head>
+ <body data-template-id="__page-root">
+
+  <div class="wrap">
+
+   <!-- Top row -->
+   <div class="top-row">
+    <span class="brand-pill">★ Kuliner Fest 2026 ★</span>
+    <span class="date-sticker">📅 16 AGS 2026</span>
+   </div>
+
+   <!-- Title block -->
+   <div class="title-block">
+    <span class="title-kicker">Open Registration</span>
+    <h1 class="title-main">
+     <span class="line-1">Lomba Kue</span>
+     <span class="line-2">Non-Beras!</span>
+    </h1>
+    <p class="title-sub">Panduan lengkap tata cara &amp; mekanisme lomba. Scroll pelan-pelan biar nggak ketinggalan info! 🔥</p>
+
+    <div class="engage-row">
+     <span class="engage-tag">❤️ <span class="n">2.4K</span></span>
+     <span class="engage-tag">💬 <span class="n">156</span></span>
+     <span class="engage-tag">🔥 <span class="n">Trending</span></span>
+     <span class="engage-tag">👁️ <span class="n">12K+</span></span>
+    </div>
+   </div>
+
+   <!-- Main stage -->
+   <div class="stage">
+    <div class="brutal-card" id="stage-card" style="padding: 28px 24px;">
+
+     <!-- Start screen -->
+     <div id="start-screen" class="start-hero" style="position: relative;">
+      <span class="sticker s1">NEW!</span>
+      <span class="sticker s2">GRATIS</span>
+      <div class="hero-emoji-wrap">
+       <span class="hero-emoji">🏆</span>
+      </div>
+      <h2>Siap Jadi<br>Si Paling Kreatif?</h2>
+      <p>Yuk pelajari semua aturan &amp; cara menang lomba kue non-beras. Cuma <strong>1 menit</strong> aja!</p>
+      
+      <!-- Tombol aksi di layar utama -->
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px;">
+        <button class="cta-btn" onclick="startPresentation()">
+         ▶ Mulai Panduan
+        </button>
+        <button class="cta-btn green" onclick="daftarViaWA()">
+         💬 Daftar WA
+        </button>
+      </div>
+
+      <div class="hash-row" style="justify-content: center;">
+       <span class="hash">#KueNonBeras</span>
+       <span class="hash">#KreasiLokal</span>
+       <span class="hash">#HUTRI81</span>
+      </div>
+     </div>
+
+     <!-- Topic view -->
+     <div id="topic-view" class="hidden"></div>
+
+    </div>
+
+    <!-- Controls -->
+    <div id="ctrl-wrap" class="hidden">
+     <div class="ctrl-row">
+      <button id="prev-btn" class="ctrl-btn" onclick="prevTopic()">← Prev</button>
+      <div id="dots" class="dot-row"></div>
+      <button id="next-btn" class="ctrl-btn next" onclick="nextTopic()">Next →</button>
+     </div>
+     <div id="page-ind" class="page-ind"></div>
+    </div>
+
+    <!-- Footer -->
+    <div class="foot">
+     <p>📍 Diselenggarakan oleh Panitia HT RI-81 RW.01 Koordinator Lomba Kuliner Ibu Mila</p>
+     <p class="big">MINGGU • 16 AGUSTUS 2026 • 15:00 WIB</p>
+    </div>
+   </div>
+
+  </div>
+
+  <script src="/_sdk/571d88ca352bbccf.editing_sdk.js" integrity="sha512-jpVzCgOJfgU8ETK2cVi9ukdjrZIqXjCspYqy9afx1TyeJ4jZxisBmh2SIlonXgbaxCv9M5yrk3WY4wZKWDC3Ig=="></script>
+  <script>
+        const topics = [
+            {
+                label: 'Tema & Tujuan',
+                icon: '🎯',
+                iconBg: 'var(--pink)',
+                titleHTML: 'Tema &<br><span class="accent">Tujuan Lomba</span>',
+                render: () => `
+                    <p class="topic-desc">Lomba ini punya <strong>3 misi utama</strong> yang keren banget:</p>
+                    <ul class="brutal-list">
+                        <li><span class="bullet pink">1</span><span>Meningkatkan <strong>kreativitas</strong> mengolah bahan pangan non-beras</span></li>
+                        <li><span class="bullet yellow">2</span><span>Mendorong pemanfaatan <strong>bahan pangan lokal</strong> Indonesia</span></li>
+                        <li><span class="bullet green">3</span><span>Menumbuhkan semangat <strong>berwirausaha</strong> lewat kuliner</span></li>
+                    </ul>
+                `
+            },
+            {
+                label: 'Waktu Pelaksanaan',
+                icon: '📅',
+                iconBg: 'var(--yellow)',
+                titleHTML: 'Kapan<br><span class="accent-pink">Lombanya?</span>',
+                render: () => `
+                    <div class="info-row">
+                        <div class="info-tile tile-pink">
+                            <div class="emoji">🗓️</div>
+                            <div class="lbl">Hari</div>
+                            <div class="val">MINGGU</div>
+                        </div>
+                        <div class="info-tile tile-yellow">
+                            <div class="emoji">📆</div>
+                            <div class="lbl">Tanggal</div>
+                            <div class="val">16 AGUSTUS 2026</div>
+                        </div>
+                        <div class="info-tile tile-green">
+                            <div class="emoji">⏰</div>
+                            <div class="lbl">Jam Mulai</div>
+                            <div class="val">15:00 WIB</div>
+                        </div>
+                        <div class="info-tile tile-blue">
+                            <div class="emoji">⏱️</div>
+                            <div class="lbl">Durasi</div>
+                            <div class="val">2 JAM</div>
+                        </div>
+                    </div>
+                    <p class="topic-desc" style="margin-top:18px;">Datang 30 menit sebelumnya buat persiapan ya! 🙌</p>
+                `
+            },
+            {
+                label: 'Ketentuan Kue',
+                icon: '🧁',
+                iconBg: 'var(--green)',
+                titleHTML: 'Boleh Pakai<br><span class="accent">Bahan Apa Aja?</span>',
+                render: () => `
+                    <p class="topic-desc">Bahan utama <strong>selain beras</strong> yang boleh kamu pakai:</p>
+                    <div class="chip-row">
+                        <span class="chip">🍠 Singkong</span>
+                        <span class="chip pink">🍠 Ubi Jalar</span>
+                        <span class="chip yellow">🌿 Talas</span>
+                        <span class="chip green">🥔 Kentang</span>
+                        <span class="chip">🌽 Jagung</span>
+                        <span class="chip blue">🍌 Pisang</span>
+                        <span class="chip pink">🎃 Labu Kuning</span>
+                        <span class="chip yellow">+ Lainnya</span>
+                    </div>
+                    <ul class="brutal-list" style="margin-top: 18px;">
+                        <li><span class="bullet green">✓</span><span>Boleh <strong>kue basah</strong> ATAU <strong>kue kering</strong></span></li>
+                        <li><span class="bullet red">✗</span><span>Tidak boleh bahan siap saji sebagai hasil utama</span></li>
+                        <li><span class="bullet green">✓</span><span>Wajib <strong>layak konsumsi</strong> &amp; higienis</span></li>
+                    </ul>
+                `
+            },
+            {
+                label: 'Batas Anggaran',
+                icon: '💰',
+                iconBg: 'var(--yellow)',
+                titleHTML: 'Budget<br><span class="accent-pink">Maksimal?</span>',
+                render: () => `
+                    <div class="stat-big">
+                        <div class="label">Max Biaya Bahan</div>
+                        <div class="value">Rp100.000</div>
+                        <div class="sub">per peserta / tim</div>
+                    </div>
+                    <ul class="brutal-list">
+                        <li><span class="bullet blue">i</span><span>Wajib serahkan <strong>rincian biaya</strong> ke panitia</span></li>
+                        <li><span class="bullet green">✓</span><span>Peralatan masak <strong>TIDAK DIHITUNG</strong></span></li>
+                        <li><span class="bullet yellow">!</span><span>Lebih dari 100rb? <strong>Diskualifikasi!</strong></span></li>
+                    </ul>
+                `
+            },
+            {
+                label: 'Kriteria Penilaian',
+                icon: '📊',
+                iconBg: 'var(--purple)',
+                titleHTML: 'Gimana Cara<br><span class="accent">Juri Nilai?</span>',
+                scores: [
+                    { label: '👅 Rasa', pct: 35, color: 'pink' },
+                    { label: '💡 Kreativitas & Inovasi', pct: 25, color: 'yellow' },
+                    { label: '✨ Penampilan', pct: 20, color: 'purple' },
+                    { label: '🌿 Bahan Non-Beras', pct: 10, color: 'green' },
+                    { label: '💸 Efisiensi Biaya', pct: 10, color: 'blue' }
+                ]
+            },
+            {
+                label: 'Diskualifikasi',
+                icon: '⚠️',
+                iconBg: '#DC2626',
+                titleHTML: 'Hal yang<br><span class="accent-pink">DILARANG!</span>',
+                render: () => `
+                    <div class="warning-box">
+                        <p class="topic-desc" style="margin-bottom: 14px; color: #991B1B; font-weight: 600;">Hindari hal-hal ini biar nggak didiskualifikasi:</p>
+                        <ul class="brutal-list">
+                            <li style="background: white;"><span class="bullet red">✗</span><span>Melebihi batas <strong>Rp100.000</strong></span></li>
+                            <li style="background: white;"><span class="bullet red">✗</span><span>Pakai bahan utama <strong>BERAS</strong></span></li>
+                            <li style="background: white;"><span class="bullet red">✗</span><span>Bukti <strong>bukan karya sendiri</strong></span></li>
+                            <li style="background: white;"><span class="bullet red">✗</span><span>Bahan <strong>tidak layak konsumsi</strong></span></li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                label: 'Penentuan Pemenang',
+                icon: '🏆',
+                iconBg: 'var(--yellow)',
+                titleHTML: 'Siapa yang<br><span class="accent">Menang?</span>',
+                render: () => `
+                    <p class="topic-desc">Pemenang dipilih berdasarkan <strong>total nilai tertinggi</strong> dari dewan juri. Keputusan juri <strong>mutlak</strong> dan tidak dapat diganggu gugat.</p>
+                    <div class="trophy-grid">
+                        <div class="trophy-item gold">
+                            <span class="emoji">🥇</span>
+                            <div class="rank">Juara 1</div>
+                        </div>
+                        <div class="trophy-item silver">
+                            <span class="emoji">🥈</span>
+                            <div class="rank">Juara 2</div>
+                        </div>
+                        <div class="trophy-item bronze">
+                            <span class="emoji">🥉</span>
+                            <div class="rank">Juara 3</div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                label: 'Penutup',
+                icon: '🎉',
+                iconBg: 'var(--pink)',
+                final: true
+            }
+        ];
+
+        let currentIdx = -1;
+        let autoTimer = null;
+        let isAuto = true;
+
+        function startPresentation() {
+            document.getElementById('start-screen').classList.add('hidden');
+            document.getElementById('topic-view').classList.remove('hidden');
+            document.getElementById('ctrl-wrap').classList.remove('hidden');
+            buildDots();
+            showTopic(0);
+        }
+
+        function buildDots() {
+            const dots = document.getElementById('dots');
+            dots.innerHTML = '';
+            topics.forEach((_, i) => {
+                const d = document.createElement('div');
+                d.className = 'dot';
+                d.onclick = () => { isAuto = false; clearTimeout(autoTimer); showTopic(i); };
+                dots.appendChild(d);
+            });
+        }
+
+        function renderTopic(idx) {
+            const t = topics[idx];
+            const view = document.getElementById('topic-view');
+            view.className = 'hidden';
+            void view.offsetWidth;
+            view.className = 'topic-view';
+
+            if (t.final) {
+                view.innerHTML = `
+                    <div class="final">
+                        <span class="final-emoji">🎉</span>
+                        <h2>
+                            <span class="w1">Selamat</span>
+                            <span class="w2">Berlomba!</span>
+                        </h2>
+                        <p>Semoga sukses &amp; tunjukkan kreativitasmu!<br>Sampai jumpa di hari lomba 🔥</p>
+                        
+                        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
+                            <button class="cta-btn green" onclick="daftarViaWA()">💬 Daftar via WhatsApp</button>
+                            <button class="cta-btn yellow" onclick="resetPresentation()">↻ Mulai Ulang</button>
+                        </div>
+
+                        <div class="hash-row" style="justify-content:center;">
+                            <span class="hash">#KueNonBeras2026</span>
+                            <span class="hash">#JagoanDapur</span>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            let body = '';
+            if (t.scores) {
+                body = `<div style="margin-top: 20px;">`;
+                t.scores.forEach(s => {
+                    body += `
+                        <div class="score-row">
+                            <div class="score-top">
+                                <span class="score-name">${s.label}</span>
+                                <span class="score-pct">${s.pct}%</span>
+                            </div>
+                            <div class="score-track">
+                                <div class="score-fill ${s.color}" data-target="${s.pct}"></div>
+                            </div>
+                        </div>
+                    `;
+                });
+                body += `</div>`;
+            } else if (t.render) {
+                body = t.render();
+            }
+
+            view.innerHTML = `
+                <div class="topic-head">
+                    <span class="topic-num">${String(idx + 1).padStart(2, '0')} / ${String(topics.length).padStart(2, '0')}</span>
+                    <span class="topic-label">${t.label}</span>
+                </div>
+                <div class="icon-block" style="background: ${t.iconBg};">${t.icon}</div>
+                <h2 class="topic-title">${t.titleHTML}</h2>
+                ${body}
+            `;
+
+            if (t.scores) {
+                setTimeout(() => {
+                    document.querySelectorAll('.score-fill').forEach(bar => {
+                        bar.style.width = bar.dataset.target + '%';
+                    });
+                }, 250);
+            }
+        }
+
+        function showTopic(idx) {
+            if (idx < 0 || idx >= topics.length) return;
+            currentIdx = idx;
+            renderTopic(idx);
+
+            document.querySelectorAll('.dot').forEach((d, i) => {
+                d.classList.toggle('active', i === idx);
+            });
+
+            document.getElementById('prev-btn').disabled = idx === 0;
+
+            const t = topics[idx];
+            document.getElementById('page-ind').innerHTML =
+                `<strong>${String(idx + 1).padStart(2, '0')}</strong> dari <strong>${topics.length}</strong> • ${t.label}`;
+
+            const nextBtn = document.getElementById('next-btn');
+            if (idx === topics.length - 1) {
+                nextBtn.textContent = '✓ Selesai';
+                nextBtn.onclick = () => { createConfetti(); };
+                setTimeout(() => createConfetti(), 300);
+            } else {
+                nextBtn.innerHTML = 'Next →';
+                nextBtn.onclick = () => nextTopic();
+            }
+
+            clearTimeout(autoTimer);
+            if (isAuto && idx < topics.length - 1) {
+                const dur = t.scores ? 6000 : 5000;
+                autoTimer = setTimeout(() => nextTopic(), dur);
+            }
+        }
+
+        function nextTopic() {
+            isAuto = false;
+            clearTimeout(autoTimer);
+            if (currentIdx < topics.length - 1) showTopic(currentIdx + 1);
+        }
+
+        function prevTopic() {
+            isAuto = false;
+            clearTimeout(autoTimer);
+            if (currentIdx > 0) showTopic(currentIdx - 1);
+        }
+
+        function resetPresentation() {
+            document.getElementById('start-screen').classList.remove('hidden');
+            document.getElementById('topic-view').classList.add('hidden');
+            document.getElementById('ctrl-wrap').classList.add('hidden');
+            currentIdx = -1;
+            isAuto = true;
+        }
+
+        function createConfetti() {
+            const emojis = ['🎉', '🎊', '✨', '🏆', '⭐', '🍰', '🧁', '🎂'];
+            for (let i = 0; i < 35; i++) {
+                setTimeout(() => {
+                    const c = document.createElement('div');
+                    c.className = 'confetti';
+                    c.style.left = Math.random() * 100 + 'vw';
+                    c.style.top = '-40px';
+                    c.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    c.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    document.body.appendChild(c);
+                    setTimeout(() => c.remove(), 5000);
+                }, i * 50);
+            }
+        }
+
+        // FUNGSI PENDAFTARAN WHATSAPP (Ubah nomor di bawah ini)
+        function daftarViaWA() {
+            const nomorWA = "6285782674710"; // <-- GANTI NOMOR WA IBU MILA / PANITIA DI SINI (Contoh: 6281299998888)
+            const pesan = `Halo Ibu Mila (Panitia Lomba Kuliner),%0A%0ASaya ingin mendaftar *LOMBA KUE NON-BERAS HUT RI-81*:%0A%0A- *Nama Peserta / Tim:* %0A- *RT:* %0A- *Rencana Olahan Kue:* %0A%0AMohon konfirmasi pendaftarannya. Terima kasih!`;
+            window.open(`https://wa.me/${nomorWA}?text=${pesan}`, '_blank');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (currentIdx === -1) return;
+            if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextTopic(); }
+            if (e.key === 'ArrowLeft') { e.preventDefault(); prevTopic(); }
+        });
+
+        let touchX = 0;
+        document.addEventListener('touchstart', (e) => { touchX = e.changedTouches[0].screenX; });
+        document.addEventListener('touchend', (e) => {
+            if (currentIdx === -1) return;
+            const d = touchX - e.changedTouches[0].screenX;
+            if (Math.abs(d) > 50) {
+                if (d > 0) nextTopic(); else prevTopic();
+            }
+        });
+    </script>
+
+ </body>
+ </html>
