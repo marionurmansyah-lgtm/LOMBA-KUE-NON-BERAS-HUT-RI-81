@@ -461,8 +461,8 @@
         .score-fill.pink { background: var(--pink); }
         .score-fill.yellow { background: var(--yellow); }
         .score-fill.green { background: var(--green); }
-        .score-fill.blue { background: var(--blue); }
-        .score-fill.purple { background: var(--purple); }
+        .score-fill.blue { background: var(--blue); color: white; }
+        .score-fill.purple { background: var(--purple); color: white; }
 
         /* Warning box */
         .warning-box {
@@ -835,6 +835,22 @@
             .icon-block { width: 68px; height: 68px; font-size: 36px; }
             .ctrl-btn { padding: 7px 12px; font-size: 12px; }
         }
+
+        /* Respect reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            .hero-emoji,
+            .confetti,
+            .score-fill,
+            .cta-btn,
+            .chip,
+            .brutal-card,
+            .trophy-item,
+            .dot {
+                animation: none !important;
+                transition: none !important;
+            }
+            .score-fill { width: auto !important; }
+        }
     </style>
  </head>
  <body>
@@ -873,17 +889,17 @@
       <span class="sticker s1">NEW!</span>
       <span class="sticker s2">GRATIS</span>
       <div class="hero-emoji-wrap">
-       <span class="hero-emoji">🏆</span>
+       <span class="hero-emoji" aria-hidden="true">🏆</span>
       </div>
       <h2>Siap Jadi<br>Si Paling Kreatif?</h2>
       <p>Yuk pelajari semua aturan &amp; cara menang lomba kue non-beras. Cuma <strong>1 menit</strong> aja!</p>
       
       <!-- Tombol aksi di layar utama -->
       <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px;">
-        <button class="cta-btn" onclick="startPresentation()">
+        <button type="button" class="cta-btn" onclick="startPresentation()" aria-label="Mulai Panduan">
          ▶ Mulai Panduan
         </button>
-        <button class="cta-btn green" onclick="daftarViaWA()">
+        <button type="button" class="cta-btn green" onclick="daftarViaWA()" aria-label="Daftar via WhatsApp">
          💬 Daftar WA
         </button>
       </div>
@@ -896,18 +912,18 @@
      </div>
 
      <!-- Topic view -->
-     <div id="topic-view" class="hidden"></div>
+     <div id="topic-view" class="hidden" role="region" aria-live="polite" aria-atomic="true" tabindex="-1"></div>
 
     </div>
 
     <!-- Controls -->
-    <div id="ctrl-wrap" class="hidden">
+    <div id="ctrl-wrap" class="hidden" aria-hidden="true">
      <div class="ctrl-row">
-      <button id="prev-btn" class="ctrl-btn" onclick="prevTopic()">← Prev</button>
-      <div id="dots" class="dot-row"></div>
-      <button id="next-btn" class="ctrl-btn next" onclick="nextTopic()">Next →</button>
+      <button id="prev-btn" type="button" class="ctrl-btn" onclick="prevTopic()" aria-label="Sebelumnya">← Prev</button>
+      <div id="dots" class="dot-row" role="tablist" aria-label="Navigasi slide"></div>
+      <button id="next-btn" type="button" class="ctrl-btn next" onclick="nextTopic()" aria-label="Berikutnya">Next →</button>
      </div>
-     <div id="page-ind" class="page-ind"></div>
+     <div id="page-ind" class="page-ind" aria-live="polite"></div>
     </div>
 
     <!-- Footer -->
@@ -1075,8 +1091,11 @@
 
         function startPresentation() {
             document.getElementById('start-screen').classList.add('hidden');
-            document.getElementById('topic-view').classList.remove('hidden');
-            document.getElementById('ctrl-wrap').classList.remove('hidden');
+            const view = document.getElementById('topic-view');
+            view.classList.remove('hidden');
+            const ctrl = document.getElementById('ctrl-wrap');
+            ctrl.classList.remove('hidden');
+            ctrl.removeAttribute('aria-hidden');
             buildDots();
             showTopic(0);
         }
@@ -1085,8 +1104,10 @@
             const dots = document.getElementById('dots');
             dots.innerHTML = '';
             topics.forEach((_, i) => {
-                const d = document.createElement('div');
+                const d = document.createElement('button');
+                d.type = 'button';
                 d.className = 'dot';
+                d.setAttribute('aria-label', `Slide ${i + 1} dari ${topics.length}: ${topics[i].label}`);
                 d.onclick = () => { isAuto = false; clearTimeout(autoTimer); showTopic(i); };
                 dots.appendChild(d);
             });
@@ -1095,6 +1116,7 @@
         function renderTopic(idx) {
             const t = topics[idx];
             const view = document.getElementById('topic-view');
+            // reset animation then apply class to retrigger
             view.className = 'hidden';
             void view.offsetWidth;
             view.className = 'topic-view';
@@ -1102,7 +1124,7 @@
             if (t.final) {
                 view.innerHTML = `
                     <div class="final">
-                        <span class="final-emoji">🎉</span>
+                        <span class="final-emoji" aria-hidden="true">🎉</span>
                         <h2>
                             <span class="w1">Selamat</span>
                             <span class="w2">Berlomba!</span>
@@ -1110,8 +1132,8 @@
                         <p>Semoga sukses &amp; tunjukkan kreativitasmu!<br>Sampai jumpa di hari lomba 🔥</p>
                         
                         <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
-                            <button class="cta-btn green" onclick="daftarViaWA()">💬 Daftar via WhatsApp</button>
-                            <button class="cta-btn yellow" onclick="resetPresentation()">↻ Mulai Ulang</button>
+                            <button type="button" class="cta-btn green" onclick="daftarViaWA()" aria-label="Daftar via WhatsApp">💬 Daftar via WhatsApp</button>
+                            <button type="button" class="cta-btn yellow" onclick="resetPresentation()" aria-label="Mulai ulang presentasi">↻ Mulai Ulang</button>
                         </div>
 
                         <div class="hash-row" style="justify-content:center;">
@@ -1120,6 +1142,9 @@
                         </div>
                     </div>
                 `;
+                // focus region for screen reader
+                view.querySelector('.final')?.setAttribute('tabindex', '-1');
+                view.querySelector('.final')?.focus();
                 return;
             }
 
@@ -1134,7 +1159,7 @@
                                 <span class="score-pct">${s.pct}%</span>
                             </div>
                             <div class="score-track">
-                                <div class="score-fill ${s.color}" data-target="${s.pct}"></div>
+                                <div class="score-fill ${s.color}" data-target="${s.pct}" aria-hidden="true"></div>
                             </div>
                         </div>
                     `;
@@ -1149,17 +1174,32 @@
                     <span class="topic-num">${String(idx + 1).padStart(2, '0')} / ${String(topics.length).padStart(2, '0')}</span>
                     <span class="topic-label">${t.label}</span>
                 </div>
-                <div class="icon-block" style="background: ${t.iconBg};">${t.icon}</div>
-                <h2 class="topic-title">${t.titleHTML}</h2>
+                <div class="icon-block" style="background: ${t.iconBg};" aria-hidden="true">${t.icon}</div>
+                <h2 class="topic-title" tabindex="-1">${t.titleHTML}</h2>
                 ${body}
             `;
 
+            // focus the topic title for screen reader & keyboard users
+            const titleEl = view.querySelector('.topic-title');
+            if (titleEl) {
+                titleEl.setAttribute('tabindex', '-1');
+                titleEl.focus({ preventScroll: false });
+            }
+
             if (t.scores) {
-                setTimeout(() => {
+                // animate fills unless user prefers reduced motion
+                if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    setTimeout(() => {
+                        document.querySelectorAll('.score-fill').forEach(bar => {
+                            bar.style.width = bar.dataset.target + '%';
+                        });
+                    }, 250);
+                } else {
+                    // if reduced motion, set width immediately to avoid animation
                     document.querySelectorAll('.score-fill').forEach(bar => {
                         bar.style.width = bar.dataset.target + '%';
                     });
-                }, 250);
+                }
             }
         }
 
@@ -1170,6 +1210,7 @@
 
             document.querySelectorAll('.dot').forEach((d, i) => {
                 d.classList.toggle('active', i === idx);
+                d.setAttribute('aria-pressed', String(i === idx));
             });
 
             document.getElementById('prev-btn').disabled = idx === 0;
@@ -1181,13 +1222,22 @@
             const nextBtn = document.getElementById('next-btn');
             if (idx === topics.length - 1) {
                 nextBtn.textContent = '✓ Selesai';
-                nextBtn.onclick = () => { createConfetti(); };
+                nextBtn.onclick = () => {
+                    // Respect reduced motion and avoid repeated confetti
+                    createConfetti();
+                    nextBtn.disabled = true;
+                    nextBtn.setAttribute('aria-disabled', 'true');
+                };
+                // small delay then confetti
                 setTimeout(() => createConfetti(), 300);
             } else {
                 nextBtn.innerHTML = 'Next →';
                 nextBtn.onclick = () => nextTopic();
+                nextBtn.disabled = false;
+                nextBtn.removeAttribute('aria-disabled');
             }
 
+            // auto-advance logic
             clearTimeout(autoTimer);
             if (isAuto && idx < topics.length - 1) {
                 const dur = t.scores ? 6000 : 5000;
@@ -1211,11 +1261,19 @@
             document.getElementById('start-screen').classList.remove('hidden');
             document.getElementById('topic-view').classList.add('hidden');
             document.getElementById('ctrl-wrap').classList.add('hidden');
+            document.getElementById('ctrl-wrap').setAttribute('aria-hidden', 'true');
             currentIdx = -1;
             isAuto = true;
+            clearTimeout(autoTimer);
+            // return focus to first CTA (improves keyboard flow)
+            const startBtn = document.querySelector('.start-hero .cta-btn');
+            if (startBtn) startBtn.focus();
         }
 
         function createConfetti() {
+            // Respect user's reduced-motion preference
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
             const emojis = ['🎉', '🎊', '✨', '🏆', '⭐', '🍰', '🧁', '🎂'];
             for (let i = 0; i < 35; i++) {
                 setTimeout(() => {
@@ -1231,19 +1289,48 @@
             }
         }
 
-        // FUNGSI PENDAFTARAN WHATSAPP
+        // FUNGSI PENDAFTARAN WHATSAPP (aman dan meng-encode pesan)
         function daftarViaWA() {
-            const nomorWA = "6285782674710"; 
-            const pesan = `Halo Ibu Mila (Panitia Lomba Kuliner),%0A%0ASaya ingin mendaftar *LOMBA KUE NON-BERAS HUT RI-81*:%0A%0A- *Nama Peserta / Tim:* %0A- *RT:* %0A- *Rencana Olahan Kue:* %0A%0AMohon konfirmasi pendaftarannya. Terima kasih!`;
-            window.open(`https://wa.me/${nomorWA}?text=${pesan}`, '_blank');
+            const nomorWA = "6285782674710";
+            const pesanPlain = `Halo Ibu Mila (Panitia Lomba Kuliner),
+
+Saya ingin mendaftar *LOMBA KUE NON-BERAS HUT RI-81*:
+
+- *Nama Peserta / Tim:*
+- *RT:*
+- *Rencana Olahan Kue:*
+
+Mohon konfirmasi pendaftarannya. Terima kasih!`;
+            const pesan = encodeURIComponent(pesanPlain);
+            const url = `https://wa.me/${nomorWA}?text=${pesan}`;
+
+            // create safe anchor to open in new tab with rel=noopener noreferrer
+            const a = document.createElement('a');
+            a.href = url;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
         }
 
+        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
+            // If start screen visible, allow Enter/Space to start
+            const startVisible = !document.getElementById('start-screen').classList.contains('hidden');
+            if (startVisible && (e.key === 'Enter' || e.key === ' ')) {
+                e.preventDefault();
+                startPresentation();
+                return;
+            }
+
             if (currentIdx === -1) return;
             if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextTopic(); }
             if (e.key === 'ArrowLeft') { e.preventDefault(); prevTopic(); }
         });
 
+        // Touch gestures
         let touchX = 0;
         document.addEventListener('touchstart', (e) => { touchX = e.changedTouches[0].screenX; });
         document.addEventListener('touchend', (e) => {
@@ -1256,4 +1343,4 @@
     </script>
 
  </body>
- </html>
+</html>
